@@ -1,18 +1,58 @@
+@font-face {
+  font-family: "F37 Ginger Pro";
+  src: url("./assets/fonts/F37GingerPro-Thin.otf");
+  src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
+    url("./assets/fonts/F37GingerPro-Thin.otf") format("opentype");
+  font-weight: 300;
+  font-style: thin;
+}
+@font-face {
+  font-family: "F37 Ginger Pro";
+  src: url("./assets/fonts/F37GingerPro-Regular.otf");
+  src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
+    url("./assets/fonts/F37GingerPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "F37 Ginger Pro";
+  src: url("./assets/fonts/F37GingerPro-Bold.otf");
+  src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
+    url("./assets/fonts/F37GingerPro-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "F37 Ginger Pro";
+  src: url("./assets/fonts/F37GingerPro-Demi.otf");
+  src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
+    url("./assets/fonts/F37GingerPro-Demi.otf") format("opentype");
+  font-weight: 700;
+  font-style: light;
+}
+@font-face {
+  font-family: "F37 Ginger Pro";
+  src: url("./assets/fonts/F37GingerPro-Black.otf");
+  src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
+    url("./assets/fonts/F37GingerPro-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: light;
+}
+/* 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
-

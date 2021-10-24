@@ -1,11 +1,16 @@
 // import logo from './logo.svg';
-import {Switch, Route, BrowserRouter as Router, Link} from 'react-dom'
+import { Switch, Route, BrowserRouter as Router, Link } from 'react-dom'
+import Navbar from './components/navbar';
+import GlobalStyle from './components/styled/globalStyles';
 
-function App() {
+const App = () => {
   return (
+    <>
+    <GlobalStyle />
     <div className="App">
-      
+      <Navbar />
     </div>
+    </>
   );
 }
 
