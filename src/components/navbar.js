@@ -4,14 +4,36 @@ import styled from "styled-components";
 import logoImg from "../assets/images/coin-logo.svg";
 import { Container, StyledHamburger } from "./styled/containers";
 
+import { Link, NavLink } from "react-router-dom";
+
 import { KeyboardArrowDown } from "@material-ui/icons";
 import Accordion from "./accordion";
 
-
-
+import sellIcon from "../assets/images/sell-coin.svg";
 
 const Navbar = () => {
   const [sidebarActive, setSidebarActive] = useState(false);
+
+  const navItemsData = [
+    {
+      id: 1,
+      icon: sellIcon,
+      title: "Sell Crypto",
+      url: "/sell-crypto",
+    },
+    {
+      id: 2,
+      icon: sellIcon,
+      title: "Exchange Crypto",
+      url: "/exchange",
+    },
+    {
+      id: 3,
+      icon: sellIcon,
+      title: "Invest In Crypto",
+      url: "/invest-crypto",
+    },
+  ];
 
   const handleSidebarActive = (e) => {
     if (e.type === "click") {
@@ -21,14 +43,18 @@ const Navbar = () => {
   return (
     <>
       <StyledNavbar>
-        <div className="logo">
+        <Link to="/" className="logo">
           <img src={logoImg} alt="" height="100%" width="100%" />{" "}
           <span>LOGO</span>
-        </div>
+        </Link>
 
         <StyledNavigation className="navigation-wrapper">
           <ul className="navlinks">
-            <li>About Us</li>
+            <li>
+              <NavLink exact to="/about-us">
+                About Us
+              </NavLink>
+            </li>
             <li class="uk-inline">
               <div className="dropdown-nav-wrapper">
                 <button className="uk-button uk-button-default" type="button">
@@ -36,19 +62,30 @@ const Navbar = () => {
                 </button>
                 <KeyboardArrowDown />
               </div>
-              <div uk-dropdown="mode: click, pos: bottom-justify" className="dropdown-container" style={{ zIndex: "1000" }}>
+              <div
+                uk-dropdown="mode: click, pos: bottom-justify"
+                className="dropdown-container"
+                style={{ zIndex: "1000" }}
+              >
                 <div className="accordion-wrap">
-                    <Accordion title={"P2P Trade"} cName={"accordion-icon"}>
-                        <ul className="accordion-items">
-                            <li>Buy</li>
-                            <li>Sell</li>
-                            <li>Create Buy Ad</li>
-                            <li>Create Sell Ad</li>
-                        </ul>
-                    </Accordion>
+                  <Accordion title={"P2P Trade"} cName={"accordion-icon"}>
+                    <ul className="accordion-items">
+                      <li>Buy</li>
+                      <li>Sell</li>
+                      <li>Create Buy Ad</li>
+                      <li>Create Sell Ad</li>
+                    </ul>
+                  </Accordion>
                 </div>
                 <ul className="nav-items">
-                    <li className="nav-item">
+                  {navItemsData.map((item) => {
+                    return (
+                      <li className="nav-item" key={item.id} imgUrl={item.icon}>
+                        <NavLink to={item.url}>{item.title}</NavLink>
+                      </li>
+                    );
+                  })}
+                  {/* <li className="nav-item">
                         <a href="#">Sell Crypto</a>
                     </li>
                     <li className="nav-item">
@@ -56,12 +93,20 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                         <a href="#">Invest In Crypto</a>
-                    </li>
+                    </li> */}
                 </ul>
               </div>
             </li>
-            <li>Market</li>
-            <li>Contact</li>
+            <li>
+              <NavLink exact to="/market">
+                Market
+              </NavLink>
+            </li>
+            <li>
+              <NavLink exact to="/contact">
+                Contact
+              </NavLink>
+            </li>
           </ul>
           <div className="locale-login-wrapper">
             <div className="locale">
@@ -109,6 +154,8 @@ export const StyledNavbar = styled.div`
     flex-wrap: nowrap;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 
     @media screen and (max-width: 900px) {
       border-right: solid 1px transparent;
@@ -159,8 +206,9 @@ export const StyledNavigation = styled.div`
       color: #777e90;
       cursor: pointer;
 
-      .uk-button,
-      .uk-button-default {
+      a {
+          text-decoration: none;
+          color: inherit;
       }
 
       button {
@@ -182,24 +230,41 @@ export const StyledNavigation = styled.div`
 
       .dropdown-container {
         background: #fcfcfd;
-        box-shadow: 0px 16px 64px -25px rgb(31 47 70 / 62%);
+        box-shadow: 0px 16px 50px -11px #1f2f463b;
         border-radius: 12px;
         width: 256px;
         padding: 16px !important;
 
-
         .nav-items {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+
+          .nav-item {
+            border-top: solid 1px #e6e8ec;
+            padding: 16px 0 12px;
             width: 100%;
+            display: flex;
 
-            .nav-item {
-                border-top: solid 1px #E6E8EC;
-                width: 100%;
+            a {
+              text-decoration: none;
+              color: inherit;
             }
-        }
 
+            ::before {
+              content: "";
+              height: 20px;
+              width: 20px;
+              margin-right: 8px;
+              position: relative;
+              background-image: url(${(props) => props.imgUrl});
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+          }
+        }
       }
     }
   }
@@ -212,6 +277,7 @@ export const StyledNavigation = styled.div`
 
         button {
           font-size: 14px;
+          font-family: var(--text-font);
           font-weight: 700;
           line-height: 16px;
           border: solid 1px transparent;
@@ -242,20 +308,19 @@ export const StyledNavigation = styled.div`
   }
 
   .accordion-wrap {
+    .accordion-items {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      list-style: none;
+      margin: 0 32px;
 
-      .accordion-items {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-        list-style: none;
-        margin: 0 32px;
-
-          li {
-            padding: 4px 0;
-            margin-bottom: 16px;
-          }
+      li {
+        padding: 4px 0;
+        margin-bottom: 16px;
       }
+    }
   }
 `;
 

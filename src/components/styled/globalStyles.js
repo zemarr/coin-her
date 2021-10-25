@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
     html {
         font-size: 15px;
+        font-family: var(--text-font)!important;
     }
 
 
@@ -24,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         background-color: var(--background-color);
         color: var(--font-color);
-        font-family: var(--text-font);
+        font-family: var(--text-font)!important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         scroll-behavior: smooth;
