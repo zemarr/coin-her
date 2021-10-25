@@ -42,12 +42,44 @@ export const StyledHamburger = styled.div`
     }
 
     ::before {
-        transform: ${({ menuOpen }) => (menuOpen ? "" : "translateY(-4px)")};
-        transform: ${({ menuOpen }) => (menuOpen ? "rotate(45deg)" : "")};
-    }
-        ::after {
-        transform: translateY(4px);
+        /* transform: ${({ menuOpen }) => (menuOpen ? "" : "translateY(4px)")}; */
+        transform: ${({ menuOpen }) => (menuOpen ? "translateY(2px)" : "translateY(4px)")};
         transform: ${({ menuOpen }) => (menuOpen ? "rotate(-45deg)" : "")};
+        transition: all .5s cubic-bezier(0.42, 0.01, 0, 1.04);
+
+    }
+    ::after {
+        /* transform: translateY(-4px); */
+        transform: ${({ menuOpen }) => (menuOpen ? "translateY(-2px)" : "translateY(-4px)")};
+        transform: ${({ menuOpen }) => (menuOpen ? "rotate(45deg)" : "")};
+        transition: all .5s cubic-bezier(0.42, 0.01, 0, 1.04);
+
     }   
 
+`
+
+export const StyledCol = styled.div`
+    max-width: ${props => props.maxWidth};
+    width: ${props => props.width};
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+        max-width: 100% !important;
+    }
+`
+
+export const StyledRow = styled.div`
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: ${props => props.justifyContent};
+    max-width: 100%;
+
+    background-color: ${({heroMetrics}) => heroMetrics ? "#F4F5F6" : ""};
+    border-radius: ${({heroMetrics}) => heroMetrics ? "24px" : ""};
+    padding: ${({heroMetrics}) => heroMetrics ? "14px" : ""};
+    margin-top: ${({heroMetrics}) => heroMetrics ? "180px" : ""};
+    overflow: ${({heroMetrics}) => heroMetrics ? "hidden" : ""};
 `

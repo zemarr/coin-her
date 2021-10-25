@@ -14,7 +14,7 @@ import sellIcon from "../assets/images/sell-coin.svg";
 const Navbar = () => {
   const [sidebarActive, setSidebarActive] = useState(false);
 
-  const navItemsData = [
+  const servicesNavData = [
     {
       id: 1,
       icon: sellIcon,
@@ -78,22 +78,13 @@ const Navbar = () => {
                   </Accordion>
                 </div>
                 <ul className="nav-items">
-                  {navItemsData.map((item) => {
+                  {servicesNavData.map((item) => {
                     return (
                       <li className="nav-item" key={item.id} imgUrl={item.icon}>
                         <NavLink to={item.url}>{item.title}</NavLink>
                       </li>
                     );
                   })}
-                  {/* <li className="nav-item">
-                        <a href="#">Sell Crypto</a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#">Exchange Crypto</a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#">Invest In Crypto</a>
-                    </li> */}
                 </ul>
               </div>
             </li>
@@ -132,12 +123,12 @@ const Navbar = () => {
 };
 
 export const StyledNavbar = styled.div`
-  padding: 24px 40px;
+  padding: 20px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  border-bottom: solid 1px #80808029;
+  border-bottom: solid 1px #80808008;
 
   @media screen and (max-width: 375px) {
     padding: 36px 20px;
@@ -234,6 +225,21 @@ export const StyledNavigation = styled.div`
         border-radius: 12px;
         width: 256px;
         padding: 16px !important;
+        left: -70px !important;
+        top: 60px !important;
+
+        ::before {
+          content: "";
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          background-color: var(--background-color);
+          border-radius: 6px;
+          top: -7px;
+          left: 48%;
+          transform: rotate(-45deg);
+          z-index: 50;
+        }
 
         .nav-items {
           display: flex;
@@ -308,6 +314,9 @@ export const StyledNavigation = styled.div`
   }
 
   .accordion-wrap {
+    background-color: var(--background-color);
+    z-index: 100;
+
     .accordion-items {
       display: flex;
       flex-direction: column;

@@ -6,8 +6,12 @@ const GlobalStyle = createGlobalStyle`
     :root {
         --text-font: "F37 Ginger Pro";
         --heading-font: "'F37 Ginger Pro', sans-serif";
-        --background-color: transparent;
+        --background-color: #FCFCFD;
+        --placeholder-image: #80808033;
         --font-color: #030303;
+        --alt-font-color: #777E90;
+        --black-font-color: #23262F;
+        --primary-color: #F1A801;
     }
 
     * {
@@ -33,6 +37,11 @@ const GlobalStyle = createGlobalStyle`
 
     h1,h2,h3,h4,h5,h6 {
         font-family: var(--text-font)!important;
+        font-weight: 700;
+    }
+
+    span {
+        color: var(--alt-font-color);
     }
 
     code {

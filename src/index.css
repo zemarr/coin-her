@@ -16,19 +16,19 @@
 }
 @font-face {
   font-family: "F37 Ginger Pro";
-  src: url("./assets/fonts/F37GingerPro-Bold.otf");
-  src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
-    url("./assets/fonts/F37GingerPro-Bold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "F37 Ginger Pro";
   src: url("./assets/fonts/F37GingerPro-Demi.otf");
   src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
     url("./assets/fonts/F37GingerPro-Demi.otf") format("opentype");
-  font-weight: 700;
+  font-weight: 600;
   font-style: light;
+}
+@font-face {
+  font-family: "F37 Ginger Pro";
+  src: url("./assets/fonts/F37GingerPro-Bold.otf");
+  src: local("F37 Ginger Pro"), local("F37-Ginger-Pro"),
+    url("./assets/fonts/F37GingerPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
 }
 @font-face {
   font-family: "F37 Ginger Pro";
