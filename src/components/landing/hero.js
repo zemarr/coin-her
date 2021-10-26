@@ -51,11 +51,11 @@ export const StyledHero = styled.section`
         }
 
         button {
-            border: none;
+            border: solid 2px transparent;
             background-color: var(--primary-color);
             border-radius: 90px;
-            width: 198px;
-            height: 52px;
+            min-width: 198px;
+            min-height: 52px;
             padding: 16px 24px;
             font-weight: 700;
             font-size: 20px;
@@ -63,6 +63,13 @@ export const StyledHero = styled.section`
             line-height: 20px;
             color: var(--background-color);
             cursor: pointer;
+
+            :hover {
+                transition: all .5s cubic-bezier(0.42, 0.01, 0, 1.04);
+                color: var(--primary-color);
+                background-color: var(--background-color);
+                border: solid 2px var(--primary-color);
+            }
         }
     }
 `

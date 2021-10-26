@@ -14,7 +14,7 @@ const Card = ({ coinImg, chartImg, coinName, coinPrice }) => {
                         <span className="coin-name">{coinName}</span>
                         <span className="rate-of-change">+0.79%</span>
                     </div>
-                    <h2>{coinPrice}</h2>
+                    <h3>{coinPrice}</h3>
                 </StyledCard>
             </StyledCol>
         </>
@@ -90,7 +90,8 @@ export const StyledCard = styled.div`
         }
     }
 
-    h2 {
+    h3 {
+        font-size: 24px;
         margin: 0;
     }
 `

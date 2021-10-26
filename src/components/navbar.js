@@ -80,7 +80,7 @@ const Navbar = () => {
                 <ul className="nav-items">
                   {servicesNavData.map((item) => {
                     return (
-                      <li className="nav-item" key={item.id} imgUrl={item.icon}>
+                      <li className="nav-item" key={item.id} imgpath={item.icon}>
                         <NavLink to={item.url}>{item.title}</NavLink>
                       </li>
                     );
@@ -264,7 +264,7 @@ export const StyledNavigation = styled.div`
               width: 20px;
               margin-right: 8px;
               position: relative;
-              background-image: url(${(props) => props.imgUrl});
+              background-image: url(${(props) => props.imgpath});
               background-position: center;
               background-repeat: no-repeat;
               background-size: cover;
@@ -286,24 +286,39 @@ export const StyledNavigation = styled.div`
           font-family: var(--text-font);
           font-weight: 700;
           line-height: 16px;
-          border: solid 1px transparent;
+          border: solid 2px transparent;
           min-height: 48px;
           min-width: 89px;
-          padding: 12px 1.1rem;
+          max-width: 150px;
+          padding: 12px 18px;
           border-radius: 90px;
           margin-right: 8px;
           cursor: pointer;
+          transition: all .3s cubic-bezier(0.42, 0.01, 0, 1.04);
         }
 
         .sign-in {
-          border: solid 1px #e6e8ec;
+          border: solid 2px #e6e8ec;
           background: transparent;
           color: #030303;
+          :hover {
+            transition: all .3s cubic-bezier(0.42, 0.01, 0, 1.04);
+            color: var(--primary-color);
+            background-color: transparent;
+            border: solid 2px var(--primary-color);
+          }
         }
         .get-started {
-          border: solid 1px transparent;
+          border: solid 2px transparent;
           background: #f1a801;
           color: #fafafa;
+
+          :hover {
+            transition: all .5s cubic-bezier(0.42, 0.01, 0, 1.04);
+            color: var(--primary-color);
+            background-color: var(--background-color);
+            border: solid 2px var(--primary-color);
+          }
         }
       }
 
