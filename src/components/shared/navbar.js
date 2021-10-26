@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import logoImg from "../assets/images/coin-logo.svg";
-import { Container, StyledHamburger } from "./styled/containers";
+import logoImg from "../../assets/images/coin-logo.svg";
+import { Container, StyledHamburger } from "../styled/containers";
 
 import { Link, NavLink } from "react-router-dom";
 
 import { KeyboardArrowDown } from "@material-ui/icons";
 import Accordion from "./accordion";
 
-import sellIcon from "../assets/images/sell-coin.svg";
+import sellIcon from "../../assets/images/sell-coin.svg";
 
 const Navbar = () => {
   const [sidebarActive, setSidebarActive] = useState(false);
@@ -212,7 +212,7 @@ export const StyledNavigation = styled.div`
         line-height: 16px;
         border: solid 1px transparent;
         min-height: 48px;
-        min-width: 89px;
+        min-width: 65px;
         padding: 0;
         margin: 0;
         border-radius: 90px;

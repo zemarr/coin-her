@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import activeChartIcon from "../assets/images/active-crypto-chart.svg";
-import chartIcon from "../assets/images/crypto-chart.svg";
+import activeChartIcon from "../../assets/images/active-crypto-chart.svg";
+import chartIcon from "../../assets/images/crypto-chart.svg";
 
 const Accordion = ({ title, cName, children }) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
@@ -22,7 +22,7 @@ const Accordion = ({ title, cName, children }) => {
           className={`${cName} accordion-title ${
             isAccordionOpen ? "open" : ""
           }`}
-          onClick={() => setIsAccordionOpen(!isAccordionOpen)}
+          onClick={handleAccordionState}
         >
           {title} <i className="uil uil-angle-down caret-icon"></i>
         </div>

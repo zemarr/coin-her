@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import Navbar from "./components/navbar";
+import Navbar from "./components/shared/navbar";
 import GlobalStyle from "./components/styled/globalStyles";
 import About from "./pages/about-us/about";
 import Contact from "./pages/contact/contact";

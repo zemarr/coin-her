@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         --text-font: "F37 Ginger Pro";
         --heading-font: "'F37 Ginger Pro', sans-serif";
         --background-color: #FCFCFD;
+        --alt-background-color: #F4F5F6;
         --placeholder-image: #80808033;
         --font-color: #030303;
         --alt-font-color: #777E90;
