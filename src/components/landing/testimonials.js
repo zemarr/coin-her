@@ -6,6 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import { ImagePlaceHolder } from './hero';
 SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
 
 const testimonies = [
     {
@@ -31,7 +35,7 @@ const Testimonials = () => {
                 <Container>
                     <Heading centered title="What our customers are saying about us" fontSize="48px" color="#23262F" align="center" boundary="60%" />
                     <div className="slider-container">
-                        <Swiper id="main-swiper" tag={'div'} navigation spaceBetween={50} slidesPerView={1} >
+                        <Swiper id="main-swiper" tag={'div'} navigation={true} spaceBetween={50} slidesPerView={1} >
                             {testimonies.map((testimony, index) => {
                                 return (
                                     <SwiperSlide tag={'div'} key={index}>
@@ -67,12 +71,16 @@ export const StyledTestimonials = styled.section`
     padding-top: 135px;
     padding-bottom: 80px;
 
-    #main-swiper {
+    /* #main-swiper {
         list-style: none !important;
-    }
+    } */
 
     .content {
         display: flex;
+
+        .left, .right {
+            max-width: 50%;
+        }
     }
 `
 
