@@ -4,8 +4,15 @@ export const Container = styled.div`
     max-width: 1120px;
     margin: 0 auto;
 
-    @media screen and (max-width: 425px) {
-        padding: 0 32px;
+    @media screen and (max-width: 1120px) {
+        max-width: 1024px;
+    }
+    @media screen and (max-width: 1024px) {
+        max-width: 768px;
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+        padding: 32px;
     }
 `
 
@@ -67,13 +74,14 @@ export const StyledCol = styled.div`
 
     @media screen and (max-width: 768px) {
         max-width: 100% !important;
+        width: auto !important;
     }
 `
 
 export const StyledRow = styled.div`
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: ${props => props.alignment};
     justify-content: ${props => props.justifyContent};
     max-width: 100%;
 
@@ -82,4 +90,8 @@ export const StyledRow = styled.div`
     padding: ${({heroMetrics}) => heroMetrics ? "14px" : ""};
     margin-top: ${({heroMetrics}) => heroMetrics ? "180px" : ""};
     overflow: ${({heroMetrics}) => heroMetrics ? "hidden" : ""};
+    
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 `

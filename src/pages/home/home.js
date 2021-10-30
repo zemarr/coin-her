@@ -4,6 +4,7 @@ import HowItWorks from "../../components/landing/howitworks";
 import MarketTrends from "../../components/landing/marketTrends";
 import Testimonials from "../../components/landing/testimonials";
 import Why from "../../components/landing/why";
+import Footer from "../../components/shared/footer";
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
       <MarketTrends />
       <Testimonials />
       <HowItWorks />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

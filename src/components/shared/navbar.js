@@ -129,6 +129,7 @@ export const StyledNavbar = styled.div`
   justify-content: space-between;
   flex-wrap: nowrap;
   border-bottom: solid 1px #80808008;
+  z-index: 1000;
 
   @media screen and (max-width: 375px) {
     padding: 36px 20px;

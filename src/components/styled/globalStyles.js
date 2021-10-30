@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
         --alt-font-color: #777E90;
         --black-font-color: #23262F;
         --primary-color: #F1A801;
+        --primary-accent: #E6E8EC;
     }
 
     * {

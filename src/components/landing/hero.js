@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import Card from './card'
 import { Container, StyledCol, StyledRow } from '../styled/containers'
 
-import coinLogo from '../../assets/images/coin-symbol.svg'
-import chartImg from '../../assets/images/Graph-template.svg'
+import landingPageImage from '../../assets/images/landing-image1.png';
+import coinLogo from '../../assets/images/coin-symbol.svg';
+import chartImg from '../../assets/images/Graph-template.svg';
 
 const Hero = () => {
     return (
@@ -19,8 +20,9 @@ const Hero = () => {
                                 <button>Get started now</button>
                             </div>
                         </StyledCol>
-                        <StyledCol maxWidth="50%">
-                            <ImagePlaceHolder height="450px" width="500px"></ImagePlaceHolder>
+                        <StyledCol maxWidth="50%" width="50%">
+                            <div className="hero-right"></div>
+                            {/* ImagePlaceHolder */}
                         </StyledCol>
                     </StyledRow>
                     <StyledRow className="hero-metrics" justifyContent="space-between" heroMetrics>
@@ -71,6 +73,20 @@ export const StyledHero = styled.section`
                 border: solid 2px var(--primary-color);
             }
         }
+    }
+
+    .hero-right {
+        background-image: url(${landingPageImage});
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 580px;
+        padding: 0 20px;
+        position: absolute;
+        top: -120px;
+        left: 0;
+        z-index: 10;
     }
 `
 
